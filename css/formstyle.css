@@ -44,15 +44,15 @@ input[type=text] {
 
 input[type=button] {
   font-family: 'Montserrat-Bold', sans-serif;
-  font-size: 25px;
+  font-size: 18px;
   border: 1px;
   border-color: #fff;
   background-color: #fe2e64;
   border-radius: 20px;
   padding: 10px 10px 10px 10px;
   margin: 10px 10px 0px 10px;
-  width: 20%;
-  color: #333;
+  width: 30%;
+  color: #fff;
 }
 input[type=button]:hover{background-color:#f7f7f7;}
 input[type=button]:focus{background-color:#e0b0ff;}
