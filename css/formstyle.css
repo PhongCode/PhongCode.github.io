@@ -44,10 +44,10 @@ input[type=text] {
 
 input[type=button] {
   font-family: 'Montserrat-Bold', sans-serif;
-  font-size: 17px;
+  font-size: 25px;
   border: 1px;
   border-color: #fff;
-  background-color: #f0f0f0;
+  background-color: #fe2e64;
   border-radius: 20px;
   padding: 10px 10px 10px 10px;
   margin: 10px 10px 0px 10px;
