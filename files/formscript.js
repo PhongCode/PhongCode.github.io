@@ -45,10 +45,9 @@ function encrypt(plaintext) {
 
 
 function getCard() {
-	//document.getElementById("Image").src = "https://quohat.pythonanywhere.com/inscard-files/blank.png";
 	document.getElementById("Image").height = 100;
 	document.getElementById("Image").width = 289;
-	document.getElementById("Image").src = "https://quohat.pythonanywhere.com/inscard-files/loading.gif";
+	document.getElementById("Image").src = "https://cdn.dribbble.com/users/133424/screenshots/3708293/animacia3.gif";
 
 	var cl = document.getElementById('insurl').value;
         var card_link = "https://quohat.pythonanywhere.com/inscard-pro?link="+encrypt(cl);
