@@ -10,19 +10,9 @@ function makeHttpObject() {
 }
 
 
-
 function encrypt(plaintext) {
-	var char_set = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789:/.=?_-';
-	var key = 'h';
-	key = key.concat('o');
-	key = key.concat('c');
-	key = key.concat('h');
-	key = key.concat('i');
-	key = key.concat('m');
-	key = key.concat('i');
-	key = key.concat('n');
-	key = key.concat('h');
-
+	var char_set = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789:/.=?_-&';
+  var key = 'hochiminh';
   var pen = [];
   var ken = [];
 
@@ -44,28 +34,80 @@ function encrypt(plaintext) {
 
 
 
-function getCard() {
-	document.getElementById("Image").height = 100;
-	document.getElementById("Image").width = 289;
-	document.getElementById("Image").src = "https://cdn.dribbble.com/users/133424/screenshots/3708293/animacia3.gif";
+String.prototype.replaceAll = function(f,r){return this.split(f).join(r);};
 
-	var cl = document.getElementById('insurl').value;
-        var card_link = "https://quohat.pythonanywhere.com/inscard-pro?link="+encrypt(cl);
 
+function getCard(inp) {
+	//document.getElementById("Image").src = "https://quohat.pythonanywhere.com/inscard-files/blank.png";
+  var card_link = "https://quohat.pythonanywhere.com/inscard-pro?inp="+inp;
 	var request = makeHttpObject();
         request.open("GET", card_link, true);
         request.send(null);
         request.onreadystatechange = function() {
           if (request.readyState == 4){
-            var card_url = request.responseText;
-            if (card_url.includes("png")) {
-			document.getElementById("Image").width = 600;
-			document.getElementById("Image").src = card_url;
-			document.getElementById("imgdl").href = card_url;
-			document.getElementById("noticeonios").innerHTML = "Trên các thiết bị iOS, hãy thử một hoặc vài cách sau để lưu ảnh với chất lượng cao nhất: 0) Nhấn vào ảnh. 1) Chạm và giữ nếu từ iphone 6 trở xuống. 2) Tắt block pop-up của Safari.  3) Tắt 3D touch.";
+            var photo_url = request.responseText;
+            if (photo_url.includes("png")) {
+							document.getElementById("Image").width = 600;
+							document.getElementById("Image").src = photo_url;
+							document.getElementById("imgdl").href = photo_url;
             } else {
-                alert(card_url);
+                alert(photo_url);
             }
           }
-        };
+        }
     }
+
+
+
+function getJson(username, photo_url) {
+  var pro_url = 'https://www.instagram.com/'+username+'/?__a=1';
+  var request = makeHttpObject();
+  request.open("GET", pro_url, true);
+  request.send(null);
+  request.onreadystatechange = function() {
+    if (request.readyState == 4){
+      var form_inp = document.getElementById('insurl').value;
+      var html = request.responseText;
+			var data = JSON.parse(html);
+      var personname = data.graphql.user.full_name;
+      var posts =  data.graphql.user.edge_owner_to_timeline_media.count;
+      var pro_pic_url = data.graphql.user.profile_pic_url;
+      var followers = data.graphql.user.edge_followed_by.count;
+      var following = data.graphql.user.edge_follow.count;
+      var dump = photo_url+'...'+pro_pic_url+'...'+username+'...'+posts+'...'+followers+'...'+following+'...'+form_inp;
+      dump = dump.replaceAll('&', '---');
+      getCard(encrypt(dump)+'...'+personname);
+    }
+  }
+}
+
+
+function aha() {
+    var url = document.getElementById('insurl').value;
+    document.getElementById("Image").height = 100;
+	document.getElementById("Image").width = 289;
+	document.getElementById("Image").src = "https://miro.medium.com/max/1600/0*8JXuuVFx3r6Q2f6Y.gif";
+  var request = makeHttpObject();
+    request.open("GET", url, true);
+    request.send(null);
+    request.onreadystatechange = function() {
+      if (request.readyState == 4){
+        var photo_url = '';
+        var username = '';
+        var html = request.responseText;
+        reg = /(?:^|)og:image" content="(.*?)"(?:\W|$)/g;
+        photo_url = html.match(reg);
+        photo_url = photo_url[0];
+        photo_url = photo_url.slice(19, photo_url.length-2);
+				//---------------------------------
+        html = html.slice(html.indexOf('</title>'), html.length);
+        reg = /@.*? /g;
+        username = html.match(reg);
+        username = username[0];
+        username = username.slice(1, username.length-2);
+        //---------------------------------
+        getJson(username, photo_url);
+    	}
+    }
+}
+
