@@ -11,20 +11,20 @@ function makeHttpObject() {
 
 
 function encrypt(plaintext) {
-	var char_set = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789:/.=?_-&';
-  var key = 'hochiminh';
+  var char_set = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789:/.=?_-& ';
+  var key = document.getElementById("encryptkey").textContent;
   var pen = [];
   var ken = [];
 
   for(var i = 0; i < plaintext.length; i++) {
     pen[i] = char_set.indexOf(plaintext[i]);
   }
-	for(var i = 0; i < key.length; i++) {
+  for(var i = 0; i < key.length; i++) {
     ken[i] = char_set.indexOf(key[i]);
   }
   while (ken.length < pen.length) {
          ken = ken.concat(ken);
-         }
+  }
   var encrypted = '';
   for(var i = 0; i < plaintext.length; i++) {
     encrypted = encrypted + (pen[i] ^ ken[i]).toString() + ' ';
@@ -39,7 +39,7 @@ String.prototype.replaceAll = function(f,r){return this.split(f).join(r);};
 
 function getCard(inp) {
 	//document.getElementById("Image").src = "https://quohat.pythonanywhere.com/inscard-files/blank.png";
-  var card_link = "https://quohat.pythonanywhere.com/inscard-pro?inp="+inp;
+  var card_link = "https://quohat9.pythonanywhere.com/inscard-pro?inp="+inp;
 	var request = makeHttpObject();
         request.open("GET", card_link, true);
         request.send(null);
@@ -84,9 +84,18 @@ function getJson(username, photo_url) {
 
 function aha() {
     var url = document.getElementById('insurl').value;
+    if (url.length == 0){
+        alert('Bạn phải dán link!');
+        return;
+    }
+    if (url.split('/p/')[1].split('/')[0].length >= 15) {
+        alert('Có vẻ như ảnh thuộc tài khoản riêng tư, hãy thử ảnh của tài khoản công khai nhé!');
+        return;
+    }
+
     document.getElementById("Image").height = 100;
 	document.getElementById("Image").width = 289;
-	document.getElementById("Image").src = "https://miro.medium.com/max/1600/0*8JXuuVFx3r6Q2f6Y.gif";
+	document.getElementById("Image").src = "https://quohat9.pythonanywhere.com/inscard-files/loading.gif";
   var request = makeHttpObject();
     request.open("GET", url, true);
     request.send(null);
@@ -104,7 +113,11 @@ function aha() {
         reg = /@.*? /g;
         username = html.match(reg);
         username = username[0];
-        username = username.slice(1, username.length-2);
+        if (username.includes(')')) {
+            username = username.slice(1, username.length-2);
+        } else {
+            username = username.slice(1, username.length-1);
+        }
         //---------------------------------
         getJson(username, photo_url);
     	}
