@@ -12,7 +12,7 @@ function makeHttpObject() {
 
 function encrypt(plaintext) {
   var char_set = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789:/.=?_-& ';
-  var key = document.getElementById("encryptkey").textContent;
+  var key = 'mJwv0SDZCPdCJ5yQMGhE';
   var pen = [];
   var ken = [];
 
