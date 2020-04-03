@@ -12,7 +12,7 @@ function makeHttpObject() {
 
 function encrypt(plaintext) {
   var char_set = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789:/.=?_-& ';
-  var key = 'mJwv0SDZCPdCJ5yQMGhE';
+  var key = document.getElementById("encryptkey").textContent;
   var pen = [];
   var ken = [];
 
@@ -39,7 +39,7 @@ String.prototype.replaceAll = function(f,r){return this.split(f).join(r);};
 
 function getCard(inp) {
 	//document.getElementById("Image").src = "https://quohat.pythonanywhere.com/inscard-files/blank.png";
-  var card_link = "https://quohat9.pythonanywhere.com/inscard-pro?inp="+inp;
+  var card_link = "https://quohat0.pythonanywhere.com/inscard-pro?inp="+inp;
 	var request = makeHttpObject();
         request.open("GET", card_link, true);
         request.send(null);
@@ -95,7 +95,7 @@ function aha() {
 
     document.getElementById("Image").height = 100;
 	document.getElementById("Image").width = 289;
-	document.getElementById("Image").src = "https://quohat9.pythonanywhere.com/inscard-files/loading.gif";
+	document.getElementById("Image").src = "https://quohat0.pythonanywhere.com/inscard-files/loading.gif";
   var request = makeHttpObject();
     request.open("GET", url, true);
     request.send(null);
