@@ -16,13 +16,7 @@
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="css/tooplate-style.css">
     
-<!--
-
-Tooplate 2115 Marvel
-
-https://www.tooplate.com/view/2115-marvel
-
--->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   </head>
   <body>
 
@@ -174,7 +168,7 @@ https://www.tooplate.com/view/2115-marvel
                                 <span>2017</span>
                             </div>
                             <div class="timeline-info">
-                                <h3><span>STEM Teacher</span><small>Kidkul Stem</small> <br> Web Designer</span><small>Freelancer</small></h3>
+                                <h3><span>STEM Teacher</span><small>Kidkul Stem</small> <br>Digital Marketing</span><small>BIT.vn</small></h3>
                                 <p>There are many things we don't know so I try with many different fields. This is also time for improving my soft skills.</p>
                             </div>
                         </div>
@@ -272,7 +266,7 @@ https://www.tooplate.com/view/2115-marvel
             <div class="contact-form">
               <h2 class="mb-4">Gửi lời mời cà phê hoặc </br> nhắn gì đó cho tôi!</h2>
 
-              <form action="" method="get">
+              <form action="" method="get" onsubmit="return postToGoogle();">
                 <div class="row">
                   <div class="col-lg-6 col-12">
                     <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
@@ -320,6 +314,36 @@ https://www.tooplate.com/view/2115-marvel
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
+	<script>
+	function postToGoogle() {
+    //Xử lý lấy dữ liệu các input vào biến tương ứng thông qua ID của input
+    var name = $("#nameField").val();
+    var email = $("#emailField").val();
+    var mess = $("#messField").val();
+    //Đoạn giữa này có thể sử dụng để validate dữ liệu 1 lần nữa hoăc... bỏ qua nhé :D
+
+    //Xử lý gửi dữ liệu lên form
+    $.ajax({
+        //Chỉ định đích gửi dữ liệu đến: là form response đã tạo ở trên
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSdhUrycAR__mPbJOZuMIKOB4avLpFLMu3JX6VVdTg4xcZ-ltw/viewform",
+        //URL lấy từ link đã note ở trên nhé
+        data: { //gán các giá trị tương ứng vào các Input name tương ứng đã lấy ở trên
+            "Your Name": name,
+            "Email": email,
+            "Message": mess
+        },
+        type: "POST",
+        dataType: "jsonp", //các bạn có thể để xml, nhưng khi bật console lên sẽ thấy báo đỏ lòm vì ko cho cross, còn cái này nó vẫn cảnh báo nhưng màu xám thôi, ko đỏ :v
+        success: function(d)
+    {}, //do đã bảo ở trên là nó ko cho cross đâu, nên khi gửi data xong ko trả về success được, ko cần điền cái này nhé
+        error: function(x, y, z) {
+            $('#success-msg').show(); //hiện ra cái mess báo thành công khi gửi xong
+        }
+    });
+
+    return false;
+}
+</script>
 
   </body>
 </html>
