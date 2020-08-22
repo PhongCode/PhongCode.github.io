@@ -1,0 +1,135 @@
+<!--
+
+TRANSLATION GUIDE:
+https://github.com/ncase/trust#how-to-translate-this-thang
+
+Hello fan-translaters!
+First off, thank you so much for taking the time to help out,
+I super appreciate it. :3 Anyway, to make translation a bit easier
+(or at least less painful) I've scattered comments about on
+what things you should translate, plus any additional info
+
+Translate the following files:
+
+    index.html - The title & social sharing text (a few words)
+    words.html - All the words for the interactive itself (~3,300 words)
+    (optional) notes/index.html - The footnotes (~1,100 words)
+    (optional) peeps/index.html - The full credits (a few words)
+
+Many thanks again!
+
+<3,
+~ Nicky Case
+
+-->
+<!doctype>
+<html>
+<head>
+
+	<!-- TO TRANSLATE: "title", "description" -->
+	<title>Sự tiến hóa của lòng tin</title>
+	<meta name="description" content="Một trò chơi nhỏ áp dụng game theory để giải thích con người tin tưởng nhau vì sao và như thế nào"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="favicon.png">
+
+	<!-- TO TRANSLATE: "name", "description" -->
+	<meta itemprop="name" content="Sự tiến hóa của lòng tin">
+	<meta itemprop="description" content="Một trò chơi nhỏ áp dụng game theory để giải thích con người tin tưởng nhau vì sao và như thế nào">
+	<meta itemprop="image" content="http://ncase.me/trust/social/thumbnail.png">
+
+	<!-- TO TRANSLATE: "name", "description" -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@ncasenmare">
+	<meta name="twitter:title" content="Sự tiến hóa của lòng tin">
+	<meta name="twitter:description" content="Một trò chơi nhỏ áp dụng game theory để giải thích con người tin tưởng nhau vì sao và như thế nào">
+	<meta name="twitter:creator" content="@ncasenmare">
+	<meta name="twitter:image" content="http://ncase.me/trust/social/thumbnail.png">
+
+	<!-- TO TRANSLATE: "name", "description" -->
+	<meta property="og:title" content="Sự tiến hóa của lòng tin">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://ncase.me/trust/">
+	<meta property="og:image" content="http://ncase.me/trust/social/thumbnail.png">
+	<meta property="og:description" content="Một trò chơi nhỏ áp dụng game theory để giải thích con người tin tưởng nhau vì sao và như thế nào">
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/slides.css">
+	<link rel="stylesheet" href="css/balloon.css">
+
+</head>
+<body>
+	<div id="preloader">đợi xíu...</div> <!-- TRANSLATE THIS -->
+	<div style="display:none" id="main">
+		<div id="slideshow_container">
+			<div id="slideshow"></div>
+			<div id="scratcher"></div>
+		</div>
+	</div>
+	<div style="display:none" id="footer">
+		<div id="sound" sound="on" class="no-select">
+			<div id="sound_icon"></div>
+			<div id="sound_on">BẬT</div> <!-- TRANSLATE THIS -->
+			<div id="sound_off">TẮT</div> <!-- TRANSLATE THIS -->
+		</div>
+		<div id="select"></div>
+
+		<!-- TRANSLATE "title" & "text". Make sure it's less than 112 characters, for Twitter's sake -->
+		<!-- Also, "link" will be changed later to whatever the link for the translated version will be. -->
+		<sharing title="Sự tiến hóa của lòng tin"
+				 text="Con người không còn tin tưởng lẫn nhau. Tại sao, và chúng ta phải thay đổi như thế nào?"
+				 link="http://nghiatt90.github.io/trust-vn/"></sharing>
+
+	</div>
+</body>
+</html>
+
+<!-- Libraries -->
+<script src="js/lib/helpers.js?v5"></script>
+<script src="js/lib/pegasus.js?v5"></script>
+<script>var c_ = {};</script>
+<script src="js/lib/minpubsub.src.js?v5"></script>
+<script src="js/lib/q.js?v5"></script>
+<script src="js/lib/pixi.min.js?v5"></script>
+<script src="js/lib/howler.js?v5"></script>
+<script>var createjs = window;</script>
+<script src="js/lib/tweenjs-0.6.2.min.js?v5"></script>
+<script>Ticker.framerate=60; Ticker.paused=true;</script>
+<script src="js/lib/sharing.js?v5"></script>
+
+<!-- Core Engine -->
+<script src="js/core/Loader.js?v5"></script>
+<script src="js/core/Slideshow.js?v5"></script>
+<script src="js/core/SlideSelect.js?v5"></script>
+<script src="js/core/Button.js?v5"></script>
+<script src="js/core/TextBox.js?v5"></script>
+<script src="js/core/Words.js?v5"></script>
+<script src="js/core/IncDecNumber.js?v5"></script>
+<script src="js/core/Slider.js?v5"></script>
+<script src="js/core/Scratcher.js?v5"></script>
+<script src="js/core/Background.js?v5"></script>
+<script src="js/core/ImageBox.js?v5"></script>
+<script src="js/core/PayoffsUI.js?v5"></script>
+
+<!-- Simulations -->
+<script src="js/sims/Splash.js?v5"></script>
+<script src="js/sims/PD.js?v5"></script>
+<script src="js/sims/Iterated.js?v5"></script>
+<script src="js/sims/Tournament.js?v5"></script>
+<script src="js/sims/SandboxUI.js?v5"></script>
+
+<!-- Slides -->
+<script src="js/slides/0_Slides_Intro.js?v5"></script>
+<script src="js/slides/1_Slides_OneOff.js?v5"></script>
+<script src="js/slides/2_Slides_Iterated.js?v5"></script>
+<script src="js/slides/3_Slides_Tournament.js?v5"></script>
+<script src="js/slides/4_Slides_Evolution.js?v5"></script>
+<script src="js/slides/5_Slides_Distrust.js?v5"></script>
+<script src="js/slides/6_Slides_Noise.js?v5"></script>
+<script src="js/slides/7_Slides_Sandbox.js?v5"></script>
+<script src="js/slides/8_Slides_Conclusion.js?v5"></script>
+<script src="js/slides/9_Slides_Credits.js?v5"></script>
+
+<!-- Main Code -->
+<script src="js/main.js?v5"></script>

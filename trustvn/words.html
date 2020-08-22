@@ -1,0 +1,1223 @@
+<!--
+
+THIS FILE HAS ABOUT 3,300 WORDS TO TRANSLATE
+
+TRANSLATION NOTES:
+
+When translating this thing, only edit the stuff that's BETWEEN the <tags>, like so:
+
+    <p id="still_english">hello</p>
+    =>
+    <p id="still_english">bonjour</p>
+
+Also, DON'T change anything between the [square brackets], like so:
+
+    Number #[N]
+    =>
+    Numero #[N]
+
+Exception to the "don't change tags" rule:
+Feel free to move around the italics & bold tags, so that the emphasis
+on the right phrases/words still makes sense!
+
+    <i>italics</i>
+    <b>bold</b>
+
+Also, some HTML weirdness you might want to know:
+
+    &amp; is an ampersand "&" sign
+    &#8226; is a dot
+    &rarr; is a rightward-facing arrow
+    &lt; is a "<" sign
+
+ALSO! I'd love for you to credit yourself as a translator!
+You can add your own name in the <p id="subtitle"> section
+
+Thanks again!
+~ Nicky Case
+
+-->
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - META STUFF - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="meta_title">
+Sự tiến hóa của lòng tin
+</p>
+<p id="meta_desc">
+Một trò chơi nhỏ áp dụng game theory để giải thích con người tin tưởng nhau vì sao và như thế nào
+</p>
+<p id="meta_loading">
+loading...
+</p>
+<p id="meta_on">
+ON
+</p>
+<p id="meta_off">
+OFF
+</p>
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - TITLE! - - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="title">
+<span style="font-size:0.75em">SỰ</span><br>
+TIẾN HÓA<br>
+<span style="font-size:0.75em">CỦA LÒNG TIN</span>
+</p>
+<p id="subtitle">
+
+Thời gian dự kiến: 30 min &#8226; by nicky case, july 2017
+
+<!-- TRANSLATION NOTE: UNCOMMENT THE FOLLOWING & ADD YOUR OWN NAME! -->
+<br>
+Dịch bởi <a href="https://github.com/nghiatt90">Trương Trung Nghĩa</a>
+&#8226;
+<a href="http://ncase.me/trust/">Original English version</a>
+
+</p>
+
+<p id="loading">
+loading...
+</p>
+<p id="loading_done">
+PLAY &rarr;
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - INTRO! - - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="intro">
+Ngay giữa Thế Chiến I lại có hòa bình.
+<br><br>
+
+Giáng sinh năm 1914 tại mặt trận Tây Âu.<br>
+Bỏ ngoài tai lệnh cấm hòa hữu với đối phương, binh lính Anh<br>
+và Đức đã rời bỏ chiến hào, vượt vùng chiến sự để thu hồi<br>
+thi thể đồng đội, tặng quà cho nhau và chơi trò chơi.
+<br><br>
+
+Bây giờ là 2017. Tây Âu đã hòa bình cả vài thập kỷ nay, nhưng<br>
+con người lại <i>chả tin tưởng nhau</i> chút nào.<br>
+Theo các kết quả điều tra, trong 40 năm qua, ngày càng ít người<br>
+nói rằng họ tin tưởng người khác. Vậy câu hỏi là:
+<br><br>
+
+<b>Tại sao, khi hòa bình, bạn bè lại trở thành thù địch?<br>
+Tại sao, trong chiến tranh, quân thù lại trở thành bằng hữu</b>
+<br><br>
+
+<b>Game theory</b> sẽ giúp giải thích về sự thiếu tin tưởng này,<br>
+và làm thế nào để thoát khỏi nó! Để hiểu thêm về vấn đề này, hãy cùng...
+</p>
+<p id="intro_button">
+...chơi 1 trò chơi. &rarr;
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - ONE OFF! - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="label_you_cooperate">
+bạn<br>hợp tác
+</p>
+
+<p id="label_you_cheat">
+bạn<br>ăn gian
+</p>
+
+<p id="label_they_cooperate">
+họ<br>hợp tác
+</p>
+
+<p id="label_they_cheat">
+họ<br>ăn gian
+</p>
+
+<p id="label_you">
+bạn<br>↙
+</p>
+<p id="label_them">
+đối phương<br>↘
+</p>
+
+<p id="oneoff_0_top">
+
+<b>TRÒ CHƠI TIN TƯỞNG</b>
+<br>
+Bạn chỉ có 1 lượt chơi.
+Trước mặt bạn là 1 cỗ máy: nếu bạn cho 1 xu vào máy,
+<i>đối phương</i> sẽ nhận được 3 xu – và ngược lại.
+Cả 2 có thể chọn HỢP TÁC (cho xu vào), hay ĂN GIAN (không bỏ xu vào).
+</p>
+
+<p id="oneoff_0_btm">
+<b>Giả sử đối phương ăn gian, không cho xu vào.</b><br>
+Bạn sẽ làm gì?
+</p>
+
+<p id="oneoff_1_cheated">
+Chuẩn rồi! Ngu gì mà để nó lừa chứ!
+</p>
+
+<p id="oneoff_1_cooperated">
+Đã biết là nó sẽ chơi bẩn mà sao còn dại thế chứ!
+</p>
+
+<p id="oneoff_1_top">
+Nếu bạn hợp tác &amp; người ta ăn gian, bạn mất 1 xu và đối phương được 3 xu. (điểm số: -1 vs +3)
+Nhưng, nếu cả 2 cùng ăn gian thì cả 2 chẳng ai được hay mất gì cả. (điểm số: 0 vs 0)<br>
+<b>Thế nên: ĂN GIAN đê.</b>
+</p>
+
+<p id="oneoff_1_btm">
+<b>Thế còn trong trường hợp người ta chơi đẹp, nhét 1 xu vào,</b><br>
+bạn sẽ làm gì?
+</p>
+
+<p id="oneoff_2_cheated">
+Vãi, bạn quá đểu... y như mình!
+</p>
+
+<p id="oneoff_2_cooperated">
+Làm người phải thế chứ... <b>đúng không nhỉ??</b>
+</p>
+
+<p id="oneoff_2_top">
+Vì cả 2 cùng chơi đẹp, mỗi người mất 1 xu và được 3 xu. (điểm số: +2 vs +2)
+Nhưng nếu bạn ăn gian &amp; họ trung thực, bạn được 3 xu và đối phương mất 1 xu. (score: +3 vs -1)<br>
+<b>Thế nên: bạn vẫn "nên" ĂN GIAN.</b>
+</p>
+
+<p id="oneoff_2_btm">
+Và <i>đó</i> chính là vấn đề.
+Tin người thì tốt, nhưng dễ để người khác lợi dụng -- tệ nhất là họ bắn bạn khi bạn thò đầu lên khỏi chiến hào.
+Đôi khi, <i>hoài nghi</i> mới là câu trả lời đúng!<br>
+Nhưng, điều gì sẽ xảy ra nếu chúng ta chơi trò chơi này...
+</p>
+
+<p id="oneoff_button_next">
+...nhiều hơn 1 lần? &rarr;
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - ITERATED - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="iterated_intro_top">
+<b>Giờ chơi thật nhé.</b>
+Bạn sẽ đấu với 5 đối thủ với các "chiến thuật" khác nhau.
+Với mỗi đối thủ, bạn sẽ chơi 3-7 lượt
+(Bạn không biết trước số lượt nhé).
+Bạn có thể tin tưởng họ không? Hay đúng hơn là... họ có thể tin <i>bạn</i> không?
+</p>
+
+<p id="iterated_intro_btm">
+Giờ chơi thật rồi đó. Nghĩ cẩn thận nhé!
+</p>
+
+<p id="iterated_info_1">
+đối thủ: [X]/[Y]
+</p>
+</p>
+<p id="iterated_info_2">
+tổng điểm của bạn: 
+</p>
+
+<p id="iterated_score_start">
+Và tổng số điểm của bạn là...
+</p>
+<p id="iterated_score_1">
+... khó có thể <i>tệ</i> hơn thế này.
+</p>
+<p id="iterated_score_2">
+hmm, cũng còn may chán!
+</p>
+<p id="iterated_score_3">
+... cũng tạm được!
+</p>
+<p id="iterated_score_4">
+... ngon đấy!
+</p>
+<p id="iterated_score_5">
+<i>Kịch kim!</i> Bạn quả là max rảnh.
+</p>
+<p id="iterated_score_x">
+... hack rồi.
+</p>
+<p id="iterated_score_end">
+(điểm số thấp nhất &amp; cao nhất lần lượt là 7 and 49)
+</p>
+
+<p id="who_were">
+Mà mấy ông tướng vừa chơi với bạn là ai thế nhỉ?
+</p>
+
+<p id="character_tft">
+<b>MÁY COPY:</b>
+Hello! Mới gặp thì mình chơi đẹp, còn sau đấy mình cứ copy cách bạn chơi lượt trước thôi
+</p>
+
+<p id="character_all_d">
+<b>LƯU MANH:</b>
+<i>ngu thì chết</i>
+</p>
+
+<p id="character_all_c">
+<b>NGÂY THƠ:</b>
+Yêu em đi &lt;3
+</p>
+
+<p id="character_grudge">
+<b>THÙ DAI:</b>
+Ông cẩn thận đấy nhé. Tôi là tôi chơi đẹp lắm,
+nhưng ông mà chơi bẩn 1 phát LÀ ĐỪNG BAO GIỜ HY VỌNG TÔI TỬ TẾ NỮA NHÉ.
+</p>
+
+<p id="character_prober">
+<b>THÁM TỬ:</b>
+Đầu tiên tôi do thám. Hợp tác, ăn gian, hợp tác, hợp tác phát nữa.
+Nếu anh ăn gian, tôi sẽ chơi kiểu <span class="tft">Máy copy</span>.
+Nếu anh trung thực suốt, tôi sẽ chuyển sang làm <span class="all_d">Lưu manh</span>, để lợi dụng anh.
+Quá cơ bản, anh Watson nhỉ.
+</p>
+
+<p id="characters_teaser">
+Giờ sẽ thế nào nếu...
+</p>
+<p id="characters_button">
+...họ chơi với nhau nhỉ? &rarr;
+</p>
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - TOURNAMENT! - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="place_your_bets">
+Mở giải đấu nào!
+Giờ mỗi nhân vật sẽ lần lượt chơi với những nhân vật còn lại:<br>
+tổng cộng là 10 trận đấu với 10 lượt trong mỗi trận.
+<br><br>
+Bạn nghĩ là ai sẽ có tổng điểm <i>sau cùng</i> cao nhất?
+<b>Hãy nghĩ thật kỹ... rồi
+ĐẶT CƯỢC:</b>
+</p>
+
+<p id="tournament_intro">
+Bạn đã đặt cược vào [CHAR]!
+Giờ hãy yên vị xem từng trận đấu diễn ra thế nào nào...
+</p>
+
+<p id="first_match">
+trận thứ nhất &rarr;
+</p>
+
+<p id="next_match">
+trận tiếp theo &rarr;
+</p>
+
+<p id="match_header_1">
+<b>Trận đấu #[N]:</b> [A] vs [B]
+</p>
+<p id="match_header_2">
+<b>Kết quả các lượt đấu:</b>
+</p>
+<p id="match_header_3">
+<b>Tổng điểm:</b> [A] vs [B]
+</p>
+
+<p id="tournament_1">
+À, tiện đây...
+</p>
+<p id="tournament_2">
+... có khi bạn đang hoài nghi về câu chuyện hòa hoãn tạm thời ngày Giáng sinh.
+Chắc chỉ là hy hữu thôi chứ?
+</p>
+<p id="tournament_3">
+Nghe như phim thế thôi, nhưng chuyện thế này chẳng phải là <i>độc nhất vô nhị</i>, hay <i>bất thường</i> gì cả.
+</p>
+<p id="tournament_4">
+Không phải <i>tất cả</i> các chiến hào đều như vậy, nhưng nó khá phổ biến.
+Nhiều mặt trận cùng nghĩ ra ý tưởng này, <i>mặc kệ</i> lệnh cấm vô cùng rõ ràng và hà khắc.
+</p>
+<p id="tournament_5">
+Và thực tế là, từ <i>trước</i> Giáng sinh, một vài mặt trận <i>đã</i>
+bí mật đồng ý hòa hoãn với đối phương.
+</p>
+<p id="tournament_6">
+Họ gọi đó là: <b>luật "sống và cho sống".</b>
+Đơn giản là, anh không bắn tôi, tôi không bắn anh. Và luật này rất hiệu quả, ở rất nhiều nơi!
+</p>
+<p id="tournament_7">
+Có thể bạn vẫn hoài nghi. Thường thì binh lính không tự dưng hòa hoãn với kẻ thù.
+Liệu có gì đặc biệt ở cái kiểu <i>chiến hào</i> này không nhỉ? 
+</p>
+<p id="tournament_8">
+Có đó, điểm đặc biệt của chiến hào là:
+khác với hầu hết các kiểu chiến trận khác,
+binh lính ngày nào cũng phải đối đầu với <i>chính những kẻ địch ngày hôm trước</i>.
+</p>
+<p id="tournament_9">
+<b>Lặp đi lặp lại.</b> Chính vì vậy mới có sự khác biệt.
+</p>
+<p id="tournament_10">
+Tạm gác lại câu chuyện. Người thắng cuộc của chúng ta là...
+</p>
+
+<p id="the_winner_is">
+(nổi trống lên...) &rarr;
+</p>
+
+<p id="tournament_winner_1">
+<b class="tft">MÁY COPY!</b>
+</p>
+<p id="tournament_winner_2_yay">
+Chúc mừng, bạn đặt cược chính xác rồi.
+</p>
+<p id="tournament_winner_2_nay">
+(Xin lỗi nhé, [CHAR].)
+</p>
+<p id="tournament_winner_3">
+"<span class="tft">Máy copy</span>" được biết đến dưới nhiều cái tên.
+Nguyên tắc vàng, ăn miếng trả miếng, hay... <b>sống và cho sống.</b>
+Đó là lý do vì sao "hòa bình" có thể xuất hiện tại các chiến hào trong Thế Chiến I:
+khi bạn bị buộc phải chơi với <i>1 nhóm người cụ thể</i> (không phải chỉ là "kẻ địch" chung chung)
+không biết bao nhiêu lần --
+<span class="tft">Máy copy</span> không chỉ thắng trận đánh, mà thắng cả cuộc chiến.
+<br><br>
+Nếu kết quả đã thay đổi khi bạn chơi trò chơi liên tiếp nhiều lượt,
+vậy chuyện gì sẽ xảy ra nếu bạn chơi...
+</p>
+<p id="tournament_teaser">
+...nhiều <i>giải đấu?</i> &rarr;
+</p>
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - EVOLUTION! - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="evolution_intro">
+Giờ hãy cho xã hội của những người chơi của chúng ta <i>tiến hóa</i> theo thời gian. 1 điệu nhảy 3 bước:
+</p>
+<p id="evolution_intro_1">
+<b>1. CHƠI 1 GIẢI ĐẤU</b><br>
+Cho họ đấu với nhau, và tính tổng số điểm từng người.
+</p>
+<p id="evolution_intro_2">
+<b>2. TIÊU DIỆT NHỮNG KẺ BẠI TRẬN</b><br>
+Loại bỏ 5 người chơi có điểm số thấp nhất. (nếu có tỉ số hòa thì chọn ngẫu nhiên trong số hòa nhau)
+</p>
+<p id="evolution_intro_3">
+<b>3. NHÂN GIỐNG KẺ CHIẾN THẮNG</b><br>
+Nhân bản 5 người có điểm số cao nhất. (nếu có tỉ số hòa thì chọn ngẫu nhiên trong số hòa nhau)
+</p>
+<p id="evolution_intro_footer">
+...và LẶP LẠI, đến khi chán thì thôi.
+Note: trên thực tế bạn cũng không cần đợi người ta chết &amp; sinh sản để xã hội tiến hóa --
+chỉ cần những hành vi "thất bại" mất đi, và những hành vi "thành công" được bắt chước là đủ.
+Nào...
+</p>
+<p id="evolution_intro_button">
+...hãy cùng xem diễn biến. &rarr;
+</p>
+
+<p id="evo_1">
+Xã hội của chúng ta bắt đầu như sau:
+<span class="all_c">15 em Ngây thơ</span>,
+<span class="all_d">5 thằng Lưu manh</span>, and
+<span class="tft">5 Máy copy</span>.
+(Ta tạm bỏ qua <span class="grudge">Thù dai</span> &amp; <span class="prober">Thám tử</span> đã)
+<br><br>
+Chúng ta sẽ nhảy điệu "giải đấu-tiêu diệt-nhân giống" tầm chục lần.
+Đặt cược tiếp chứ nhể! Bạn nghĩ ai sẽ thắng giải đấu <i>đầu tiên</i>?
+<b>ĐẶT CƯỢC LẠI ĐÊ:</b>
+</p>
+
+<p id="evo_2_all_c">
+Có lý, <span class="all_c">Ngây thơ</span> đông hơn hẳn mà...
+</p>
+<p id="evo_2_all_d">
+Có lý, <span class="all_d">Lưu manh</span> có 1 đàn <span class="all_c">Ngây thơ</span> để lợi dụng...
+</p>
+<p id="evo_2_tft">
+Có lý, <span class="tft">Máy copy</span> thắng giải đấu trước mà...
+</p>
+<p id="evo_2">
+Thử xem bạn đúng không nhé:
+</p>
+
+<p id="label_play_tournament">
+1) chơi 1 giải đấu
+</p>
+<p id="label_eliminate_bottom_5">
+2) tiêu diệt 5 kẻ thua cuộc
+</p>
+<p id="label_reproduce_top_5">
+3) nhân bản top 5
+</p>
+
+<p id="evo_3_all_c">
+Méo, mấy em <span class="all_c">Ngây thơ</span> bị bọn
+<span class="all_d">Lưu manh</span> ăn thịt rồi!
+</p>
+<p id="evo_3_all_d">
+Thật buồn là bạn đã đúng. Lũ <span class="all_d">Lưu manh</span> thắng lần này rồi, 
+quân số chúng đã tăng lên 5.
+</p>
+<p id="evo_3_tft">
+Méo, <span class="tft">Máy copy</span> không thắng rồi – nhưng ít nhất họ cũng không đến nỗi tệ như
+<span class="all_c">Ngây thơ</span>. Mấy ẻm bị bọn <span class="all_d">Lưu manh</span> làm thịt rồi.
+</p>
+<p id="evo_3">
+Nhưng hãy thử chơi thêm vài lượt nữa nhỉ...
+</p>
+
+<p id="evo_4">
+<span class="all_d">Lưu manh</span> vẫn tiếp tục phát triển,
+thay thế <span class="all_c">Ngây thơ</span>...
+</p>
+
+<p id="evo_5">
+Xong, mấy em <span class="all_c">Ngây thơ</span> tuyệt chủng rồi.
+Cơ mà...
+</p>
+
+<p id="evo_6">
+Đúng rồi: <span class="all_d">Lưu manh</span> giờ lại trở thành nạn nhân!
+Chúng lợi dụng <span class="all_c">Ngây thơ</span>,
+nhưng khi không còn ai nữa thì chúng gặp phải <span class="tft">Máy copy</span>:
+tốt bụng nhưng không ngu ngốc.
+</p>
+
+<p id="evo_7">
+Bằng cách copy lại hành động của đối phương,
+<span class="tft">Máy copy</span> có thể chơi đẹp với nhau,
+trong khi <span class="all_d">Lưu manh</span> cứ ngồi lừa nhau!
+Không những thế, <span class="tft">Máy copy</span> còn
+có thể dạy cho <span class="all_d">Lưu manh</span>
+một bài học đích đáng.
+</p>
+
+<p id="evo_8">
+Và kết quả là...
+</p>
+
+<p id="evo_9">
+...<span class="tft">Máy copy</span> thống trị Trái đất.
+</p>
+<p id="evo_9_all_c">
+Vậy, tuy là bạn cược sai bét -- những em <span class="all_c">Ngây thơ</span> tốt bụng nhưng ngờ nghệch
+bị loại từ vòng gửi xe -- sau cùng thì, 1 dạng tốt bụng <i>thông minh</i> đã sống sót,
+và bè lũ <span class="all_d">Lưu manh</span> bị đập dẹp lép như con tép.
+</p>
+<p id="evo_9_all_d">
+Vậy, trong 1 thời gian ngắn bạn đã đúng - <span class="all_d">Lưu manh</span> thắng mấy vòng đầu,
+nhưng đến cuối thì chính tính lừa lọc đã quay lại hại chúng.
+</p>
+<p id="evo_9_tft">
+Vậy, nếu về lâu về dài thì bạn đã đúng - <span class="tft">Máy copy</span> sẽ thắng!
+Mấy ông <span class="all_d">Lưu manh</span> có thể thắng trong thời gian ngắn,
+nhưng đến cuối thì chính tính lừa lọc đã quay lại hại chúng.
+</p>
+<p id="evo_9_end">
+Điều này nhắc tôi nhớ đến 1 câu nói:
+<br><br>
+<i>"Chúng ta bị trừng phạt dưới tay tội lỗi của mình, chứ không phải do chúng"</i><br>
+<i>(We are punished by our sins, not for them.)</i><br>
+~ Elbert Hubbard
+</p>
+<p id="evo_9_btn">
+(à mà tiện đây...)
+</p>
+
+<p id="evo_10">
+(...kết quả cũng không thay đổi nếu cho
+<span class="grudge">Thù dai</span> &amp; <span class="prober">Thám tử</span> vào)
+</p>
+
+<p id="evo_autoplay">
+tự tiến hóa!
+</p>
+<p id="evo_autoplay_stop">
+dừng tiến hóa
+</p>
+
+<p id="evo_10_followup">
+(Để ý: thi thoảng, 1 vài ông <span class="grudge">Thù dai</span> không chịu chết,
+vì khi chỉ còn <span class="grudge">Thù dai</span> &amp; <span class="tft">Máy copy</span> 
+thì họ hòa nhau)
+<br><br>
+Có vẻ như, <b>game theory</b> cho chúng ta thấy:
+cách sống của <span class="tft">Máy copy</span>,
+"họ làm gì mình mình làm lại y như vậy với họ", không những đúng 
+về mặt <i>đạo đức</i>, mà còn đúng cả về mặt <i>toán học</i>.
+Tuy nhiên...
+</p>
+<p id="evo_10_btn">
+...có 1 vấn đề nhỏ: &rarr;
+</p>
+
+<p id="evo_11">
+Hãy nhìn xung quanh. Thế giới giờ đang toàn bọn đểu giả.
+<br><br>
+Nếu chiến thuật của <span class="tft">Máy copy</span> trong trò chơi tin tưởng này thực sự mạnh mẽ --
+đến mức binh lính dưới các chiến hào trong Thế Chiến I áp dụng chiến thuật tương tự, gọi là "sống và cho sống" -- 
+thì tại sao giờ lại có quá nhiều người không có lòng tin, không đáng tin đến vậy?
+Đâu là nguyên nhân của cái bệnh dịch mang tên "hoài nghi" này?
+<br><br>
+Manh mối nằm trong chính câu hỏi trên. "trong <i>trò chơi tin tưởng này</i>."
+Cho đến giờ ta mới xét đến sự thay đổi về người chơi:
+thế còn <i>sự thay đổi về trò chơi</i> thì sao?
+Điều gì sẽ dẫn đến...
+</p>
+<p id="evo_11_btn">
+...sự tiến hóa của <i>hoài nghi</i>?
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - DISTRUST - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="distrust_1">
+Hãy bắt đầu với 1 thế giới tươi đẹp!
+Đây là Trái đất tràn ngập các em <span class="all_c">Ngây thơ</span>,
+ngoại trừ 1 <span class="all_d">Lưu manh</span> và 1 <span class="tft">Máy copy</span>.
+<br><br>
+Nhấn các nút bên phải để <b>Tự chạy</b> giả lập,
+xem <b>từng bước</b> một, hoặc <b>thiết lập lại</b> như ban đầu. &rarr;
+</p>
+
+<p id="distrust_2">
+Như bạn đã biết, <span class="tft">Máy copy</span> về lâu về dài sẽ chiến thắng tuyệt đối,
+với luật chơi như hiện tại!
+<br><br>
+Luật chơi <i>hiện tại</i>, tức là mỗi trận đấu sẽ kéo dài <i>10</i> lượt.
+Liệu <span class="tft">Máy copy</span> có còn thắng không nếu chỉ chơi 7 lượt? 5 lượt? 3? 2? 1?
+<br><br>
+<b>Thay đổi số lượt chơi</b> bằng thanh chạy bên dưới,
+rồi thử cho giả lập <b>TỰ CHẠY</b>, và xem chuyện gì sẽ xảy ra.
+Cứ thoải mái nghịch nhé!
+</p>
+
+<p id="distrust_2_end">
+khi nghịch chán, hãy nhấn:
+</p>
+
+<p id="distrust_3">
+Bạn thấy đấy, nếu chơi ít lượt (ở đây là 5 lượt hoặc ít hơn) thì
+<span class="all_d">LƯU MANH</span> thắng áp đảo.
+<br><br>
+Năm 1985, khi người Mỹ được hỏi họ có bao nhiêu người bạn thân,
+câu trả lời phổ biến nhất là "ba". Năm 2004, câu trả lời phổ biến nhất là <i>"không"</i>.
+Chúng ta giờ có ít bạn hơn xét trên mặt tầng lớp xã hội, chủng tộc, kinh tế, chính trị,
+đơn giản vì chúng ta <i>có ít bạn hơn xưa</i>.
+Như bạn vừa tự thấy đó,
+<b>càng ít "sự giao tiếp lặp lại" thì gian lận và ngờ hoặc càng nhiều.</b>
+<br><br>
+(không, mạng xã hội không tính nhé:
+phải là giao tiếp <i>2 chiều</i> giữa <i>những cá nhân cụ thể</i>.)
+</p>
+<p id="distrust_3_btn">
+và, nó còn có thể tệ hơn nữa... &rarr;
+</p>
+
+<p id="distrust_4">
+Còn có 1 <i>nguyên nhân khác</i> sinh ra ngờ hoặc.
+Đây là số xu bạn nhận được trong trò chơi tin tưởng:
+</p>
+<p id="distrust_4_2">
+Với số xu nhận được như trên, <span class="tft">Máy copy</span> thắng.
+Giờ, hãy thử <b>thay đổi phần thưởng khi "cả 2 cùng hợp tác" từ +2 thành +1</b>,
+rồi nhấn <b>TỰ CHẠY</b>.
+Mặc du +1 vẫn <i>nhiều hơn</i> so với trường hợp cả 2 cùng ăn gian (0)...
+chuyện gì sẽ xảy ra?
+</p>
+<p id="distrust_4_note">
+Lại tiếp tục mời bạn thoải mái nghịch với phần thưởng khác nhau!
+khi nghịch xong, nhấn:
+</p>
+<p id="distrust_4_note_2">
+(giả lập 10 lượt 1 trận đấu)
+</p>
+
+<p id="distrust_5">
+Điều tương tự xảy ra:
+với phần thưởng "đôi bên cùng có lợi" nhỏ hơn, <span class="all_d">Lưu manh</span> lại độc bá võ lâm.
+Game theory có 2 khái niệm rất quan trọng áp dụng ở đây:
+<br><br>
+<b>"Trò chơi Tổng 0"(Zero-sum game).</b> Đây là cách nghĩ (đáng buồn là khá phổ biến) là điều có lợi cho "mình"
+thì <i>chắc chắn sẽ</i> làm thiệt hại cho "họ", và ngược lại.
+<br><br>
+<b>"Trò chơi Tổng khác 0"(Non-zero-sum game).</b> Đây là khi mọi người cố gắng
+tìm ra tình huống "đôi bên cùng có lợi" (hoặc ít nhất, tránh việc đôi bên cùng thiệt)
+Nếu không có Trò chơi Tổng khác 0, <i>lòng tin sẽ không thể phát triển.</i>
+<br><br>
+Cũng tiện đây,
+hãy cùng xét đến rào cản thứ 3 &amp; cuối cùng đối với sự phát triển của lòng tin...
+</p>
+<p id="distrust_5_btn">
+Lỗi <s>nầm</s> lầm. &rarr;
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - NOISE! - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="noise_1">
+<span class="tft">Máy copy</span> chơi hay thật đấy, nhưng anh ta có 1 điểm yếu chết người mà mình chưa nhắc đến.
+Vấn đề có thể được thấy khi cho 2 <span class="tft">Máy copy</span> chơi với nhau:
+</p>
+<p id="noise_1_end">
+Là người chính trực, bước đầu tiên của cả 2 đều sẽ là:
+</p>
+
+<p id="noise_2">
+Nếu bình thường thì họ sẽ cứ trả ơn lẫn nhau và hợp xướng Kumbaya đến ngày tận cùng trái đất.
+</p>
+<p id="noise_2_end">
+Nhưng nếu, trong khi đang muốn trả ơn đối phương...
+</p>
+
+<p id="noise_3">
+<b>THÔI XONG</b>
+<br>
+Nhầm lẫn, nói sai, hiểu nhầm -- quá nhiều tai nạn có thể xảy ra trong đời thực.
+</p>
+<p id="noise_3_end">
+Nhưng nếu đối phương không <i>nghĩ</i> rằng đó chỉ là 1 tai nạn...
+</p>
+
+<p id="noise_4">
+<b>THÔI XONG TẬP 2</b>
+<br>
+Người còn lại sẽ trả đũa đúng tinh thần của <span class="tft">Máy copy</span>...
+</p>
+<p id="noise_4_end">
+...và bạn, cũng là <span class="tft">Máy copy</span>, cũng phải trả đũa lại...
+</p>
+
+<p id="noise_5">
+Và thế là, như hai nhà <a href="http://banhtv.com/phim/hatfields-va-mccoys-hatfields-mccoys-2012-5463.html">Hatfield và McCoy</a>,
+2 <span class="tft">Máy copy</span> này sẽ bị cuốn vào vòng xoáy trả thù lẫn nhau...
+tất cả chỉ vì 1 cái lỗi lầm ngớ ngẩn từ đời tám hoánh nào rồi.
+</p>
+<p id="noise_5_end">
+Quá nhọ. Thế liệu có kiểu <i>người chơi khác</i> mà có thể...
+</p>
+<p id="noise_5_btn">
+...xử lý các lỗi lầm không nhỉ? &rarr;
+</p>
+
+<p id="noise_characters">
+Hãy cùng gặp 1 vài gương mặt mới! (mà thực ra là vài cái mũ mới)
+</p>
+
+<p id="character_tf2t">
+<b>MÁY COPY 2.0:</b><br>
+Hello! Mình cũng giống <span class="tft">Máy copy</span>,
+ngoại trừ việc mình sẽ chỉ phản kháng khi bạn lừa mình 2 lần liên tiếp.
+Lần đầu có thể là nhầm lẫn thôi mà!
+</p>
+
+<p id="character_pavlov">
+<b>ĐẦU ÓC TỐI GIẢN:</b><br>
+hì, mình ban đầu sẽ hợp tác.
+nếu cậu cũng hợp tác, mình sẽ <i>lặp lại</i> hành động trước, kể cả khi đó là do sai lầm.
+nếu cậu chơi xấu, mình sẽ làm <i>ngược lại</i> hành động trước, kể cả khi đó là do sai lầm.
+</p>
+
+<p id="character_random">
+<b>NGẪU HỨNG:</b><br>
+<i>Quẩy tưng bừng nào! Mình đá theo cảm hứng :)</i><br>
+(lúc chơi đẹp lúc chơi bẩn, 50-50)
+</p>
+
+<p id="noise_characters_end">
+Nào thử xem mấy tay chơi này sẽ ra sao khi...
+</p>
+<p id="noise_characters_btn">
+...cho họ đấu lẫn nhau  &rarr;
+</p>
+
+<p id="noise_evo_1">
+Hãy bắt đầu với 1 tá
+<span class="all_c">Ngây thơ</span>,
+đấu với đương kim vô địch <span class="tft">Máy copy</span>,
+và 3 ẩn số mới:
+<span class="tf2t">Máy copy 2.0</span> độ lượng,
+<span class="pavlov">Đầu óc tối giản</span>, và
+anh chàng <span class="random">Ngẫu hứng</span>.
+<br><br>
+Trong mỗi lượt, mỗi người chơi có 1 xác suất mắc lỗi lầm nhất định. (tạm thời là 5%)
+Bạn nghĩ ai sẽ thắng?
+<b>Nghĩ cẩn thận, rồi ĐẶT CƯỢC NÀO:</b>
+</p>
+
+<p id="noise_evo_2">
+OK, bạn cược [CHAR] sẽ thắng. Thử xem nhé!
+Dùng các nút điều khiển bên trái để <b>TỰ CHẠY</b> giả lập,
+hoặc đi <b>từng bước một</b>.
+</p>
+<p id="noise_evo_2_2_correct">
+Bạn đoán đúng rồi -- 
+</p>
+<p id="noise_evo_2_2_incorrect">
+Bạn đoán sai rồi -- 
+</p>
+<p id="noise_evo_2_2">
+<span class="pavlov">Đầu óc tối giản</span> thắng!
+Nếu để ý có thể thấy <span class="pavlov">Đầu óc tối giản</span> có khả năng
+lợi dụng <span class="all_c">Ngây thơ</span>. Ban đầu cả 2 đều hợp tác,
+nhưng nếu <span class="pavlov">Đầu óc tối giản</span> nhầm lẫn thành ăn gian,
+vì <span class="all_c">Ngây thơ</span> không bao giờ phản ứng lại,
+<i>nên hắn sẽ tiếp tục lừa tiếp.</i>.
+</p>
+<p id="noise_evo_2_2_btn">
+Giờ hãy thử...
+</p>
+
+<p id="noise_evo_3">
+...giống như cũ, ngoại trừ việc 1 nửa dân số là <span class="all_c">Ngây thơ</span>,
+giờ 1 nửa sẽ là <span class="all_d">Lưu manh</span>. Môi trường <i>ít thân thiện</i> hơn,
+<i>khắc nghiệt</i> hơn rất nhiều.
+<br><br>
+Giờ bạn nghĩ ai sẽ thắng? <b>Nghĩ, rồi ĐẶT CƯỢC:</b>
+</p>
+
+<p id="noise_evo_4">
+Bạn đặt vào [CHAR]. Giờ hãy chơi lại giả lập...
+</p>
+<p id="noise_evo_4_2_correct">
+Tiền là của bạn -- 
+</p>
+<p id="noise_evo_4_2_incorrect">
+Nộp tiền ra nhé -- 
+</p>
+<p id="noise_evo_4_2">
+Lần này <span class="tf2t">Máy copy 2.0</span> chiến thắng!
+Điêu đáng ngạc nhiên là với môi trường <i>khốc liệt</i> hơn,
+<span class="tf2t">Máy copy 2.0</span>,
+phiên bản <i>độ lượng hơn</i> của <span class="tft">Máy copy</span>,
+lại là người thành công nhất! (note: <span class="tf2t">Máy copy 2.0</span> hiền đến mức
+họ không <i>loại sạch</i> <span class="tft">Máy copy</span> mà cùng sống hòa bình)
+<br><br>
+Trường hợp này, 1 chút "hiểu lầm" (5% mỗi lượt) có thể dẫn tới
+nhiều <i>sự khoan dung</i> hơn. Nhưng liệu điều này có đúng với <i>tất cả</i> mọi cấp độ...
+</p>
+<p id="noise_evo_4_2_btn">
+...của hiểu lầm hay không?
+</p>
+
+<p id="noise_evo_5">
+<b>Dùng thanh chạy bên dưới để chỉnh độ "hiểu lầm", rồi nhấn TỰ CHẠY.</b>
+Ở mức 5%, <span class="tf2t">Máy copy 2.0</span> thắng.
+Thế ở 0%? Hay 20%? Hay 50%? (chỉ đến 50% thôi,
+vì thế nghĩa là lượt nào cũng là <i>tung đồng xu</i> rồi) 
+</p>
+<p id="noise_evo_5_continue">
+Khi chơi xong, hãy nhấn:
+</p>
+
+<p id="noise_evo_6">
+Kết quả đại khái như sau:<br>
+<b>Ở mức 0%,</b> <span class="tft">Máy copy</span> sòng phẳng sẽ thắng!
+<b>1% đến 9%,</b> <span class="tf2t">Máy copy 2.0</span> nhân từ sẽ thắng!
+<b>10% đến 49%:</b> bè lũ <span class="all_d">Lưu manh</span> thắng.
+<b>Ở 50%,</b> <i>chả ai thắng cả.</i>
+<br><br>
+Đó là lý do tại sao "hiểu lầm" lại là 1 rào cản vô cùng thú vị với lòng tin:
+<i>một chút</i> hiểu lầm sẽ dẫn đến lòng vị tha,
+nhưng <i>quá nhiều</i> hiểu lầm sẽ dẫn đến mất lòng tin!
+Mình nghĩ rằng, công nghệ truyền thông hiện đại
+tuy giúp mở rộng khả năng giao tiếp đó,...
+nhưng cũng làm tăng <i>sự hiểu lầm</i> lên rất nhiều.
+<br><br>
+Cuối cùng, mời các bạn thoải mái thí nghiệm với <i>tất cả</i> đống số má, thanh chạy...
+Hãy chơi...
+</p>
+<p id="noise_evo_6_btn">
+...chế độ chơi tự do!
+</p>
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - SANDBOX! - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="sandbox_population">
+Bắt đầu với phân bố xã hội như sau:
+</p>
+
+<p id="sandbox_payoffs">
+Phần thưởng cho 1 lượt đấu:
+</p>
+<p id="sandbox_reset_payoffs">
+để mặc định
+</p>
+
+<!--
+When translating the following, keep the "[N]", with square brackets,
+as a placeholder for the number. Some of these need double-translations,
+one for the plural version, one for the singular version.
+-->
+
+<p id="sandbox_rules_1">
+Chơi [N] lượt 1 trận:
+</p>
+<p id="sandbox_rules_1_single">
+Chơi [N] lượt 1 trận:
+</p>
+
+<p id="sandbox_rules_2">
+Sau mỗi giải đấu, loại [N] người bét bảng và thay bằng [N] người thắng cuộc:
+</p>
+<p id="sandbox_rules_2_single">
+Sau mỗi giải đấu, loại [N] người bét bảng và thay bằng [N] người thắng cuộc:
+</p>
+
+<p id="sandbox_rules_3">
+Ở mỗi lượt chơi, tỉ lệ 1 người chơi mắc sai lầm là [N]% :
+</p>
+
+<p id="sandbox_end">
+<b>CHÚ Ý: chế độ chơi tự do là hoàn toàn không bắt buộc.</b>
+Bỏ qua nó hay chơi là tùy bạn! Khi đã chơi xong, hãy cùng nhìn lại...
+</p>
+<p id="sandbox_end_btn">
+những gì chúng ta vừa học! &rarr;
+</p>
+
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - CONCLUSION! - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="conclusion_0">
+Game theory đã chỉ cho chúng ta 3 điều cần thiết cho sự tiến hóa của lòng tin:
+</p>
+<p id="conclusion_1_a">
+1. TƯƠNG TÁC CÓ TÍNH LẶP LẠI
+</p>
+<p id="conclusion_1_a2">
+Lòng tin giúp gắn các mối quan hệ,
+nhưng <i>trước khi</i> lòng tin có thể phát triển, ta cần biết chắc khả năng sẽ có tương tác trong tương lai.
+</p>
+<p id="conclusion_2_a">
+2. ĐÔI BÊN CÙNG CÓ LỢI
+</p>
+<p id="conclusion_2_a2">
+Chúng ta phải chơi trò chơi tổng khác 0,
+trò chơi mà ít nhất có 1 khả năng nhất định để <i>cả hai</i> người chơi có lợi -- 2 bên cùng chiến thắng.
+</p>
+<p id="conclusion_3_a">
+3. TỈ LỆ SAI LẦM THẤP
+</p>
+<p id="conclusion_3_a2">
+Nếu mức sai lầm <i>quá</i> cao, lòng tin sẽ tan vỡ.
+Nhưng khi có đôi chút hiểu lầm, người <i>vị tha</i> sẽ có lợi.
+</p>
+<p id="conclusion_4">
+Dĩ nhiên, lòng tin trong thực tế còn bị ảnh hưởng bởi vô vàn các yếu tố khác.
+Danh tiếng, giá trị chung, hợp đồng, rào cản văn hóa, vân vân và vân vân.
+Và đừng quên ...
+</p>
+<p id="conclusion_btn">
+...bài học <i>quan trọng nhất</i>. &rarr;
+</p>
+
+<p id="outro_1">
+Nếu có 1 điều chống lại<br>
+<i>toàn bộ</i> game theory, thì đó là:
+<br><br>
+<b>Hành động của người chơi bị chi phối bởi trò chơi.</b><br>
+Nhưng vấn đề của chúng ta không chỉ dừng lại ở việc người chơi mất lòng tin,<br>
+mà chính <i>môi trường</i> của chúng ta đang cản trở sự phát triển của lòng tin đó.
+<br><br>
+Nghe có vẻ không đáng tin hay ngờ nghệch -- việc chúng ta "chỉ là" sản phẩm của môi trường xung quanh --
+nhưng game theory đã nhắc chúng ta rằng, <i>chính chúng ta</i> là môi trường của những người khác.
+<b>Ngắn hạn, trò chơi sẽ chi phối con người. Nhưng trong cuộc chơi dài,
+chính những người chơi chúng ta mới là người ra luật chơi.</b>
+<br><br>
+Vậy nên, hãy làm gì <i>bạn</i> có thể, để tạo ra những điều kiện giúp lòng tin tiến hóa.
+Xây dựng quan hệ. Tìm tình huống lợi cả đôi đường. Giao tiếp mạch lạc.
+Có thể khi đó, chúng ta có thể ngừng bắn giết lẫn nhau, rời khỏi chiến hào của bản thân,
+vượt qua vùng tử địa để đến với nhau...
+</p>
+
+<p id="outro_1_btn">
+và cùng ...
+</p>
+
+<p id="outro_2">
+...sống và cho sống.
+</p>
+
+<p id="outro_2_credits">
+"Đình chiến Giáng sinh giữa 2 chiến hào"
+Minh họa bởi AC Michael.
+Công bố trong <i>Họa báo Luân Đôn</i>, ngày 9 tháng 1 năm 1915.
+</p>
+
+<p id="outro_2_btn">
+&lt;3
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - CREDITS! - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="credits">
+<span class="credits">
+
+Tác giả:<br>
+<span class="big">NICKY CASE</span><br>
+<a href="http://ncase.me/" target="_blank">chơi những trò khác của tôi</a>
+•
+<a href="https://twitter.com/ncasenmare" target="_blank">theo dõi tôi trên tweeter</a>
+<br>
+<a href="https://github.com/ncase/trust/#play-it-here-httpncasemetrust" target="_blank">tải nhạc &amp; mã nguồn</a>
+
+<span class="divider"></span>
+
+dựa trên cuốn sách của robert axelrod's năm 1984,<br>
+<span class="big">"SỰ TIẾN HÓA CỦA HỢP TÁC"<br>(THE EVOLUTION OF COOPERATION)</span><br>
+<a href="notes" target="_blank">đọc 1 số chú thích cho trò chơi này (tiếng Anh)</a>
+
+<span class="divider"></span>
+
+rất yêu quý và cảm ơn<br>
+<span class="big">NHỮNG NGƯỜI ĐÃ LUÔN ỦNG HỘ TÔI</span><br>
+<a href="peeps" target="_blank">xem tôi vẽ họ nè</a>
+•
+<a href="https://www.patreon.com/ncase" target="_blank">ném tôi ít xu trên patreon đi &lt;3</a>
+
+<span class="divider"></span>
+
+p.s: vẫn còn muốn vừa chơi vừa học?<br>
+vào đây 
+<a href="http://explorabl.es/" target="_blank">tự khám phá nhé</a>!
+
+</span>
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - THE PLAYERS - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="label_tft">Máy copy</p>
+<p id="label_short_tft">
+máy copy
+</p>
+<p id="icon_tft">
+<span class="tft">
+	<span class="icon"></span>
+	<span class="icon_label">Máy copy</span>
+</span>
+</p>
+
+<p id="label_all_d">Lưu manh</p>
+<p id="label_short_all_d">
+lưu manh
+</p>
+<p id="icon_all_d">
+<span class="all_d">
+	<span class="icon"></span>
+	<span class="icon_label">Lưu manh</span>
+</span>
+</p>
+
+<p id="label_all_c">Ngây thơ</p>
+<p id="label_short_all_c">
+ngây thơ
+</p>
+<p id="icon_all_c">
+<span class="all_c">
+	<span class="icon"></span>
+	<span class="icon_label">Ngây thơ</span>
+</span>
+</p>
+
+<p id="label_grudge">Thù dai</p>
+<p id="label_short_grudge">
+thù dai
+</p>
+<p id="icon_grudge">
+<span class="grudge">
+	<span class="icon"></span>
+	<span class="icon_label">Thù dai</span>
+</span>
+</p>
+
+<p id="label_prober">Thám tử</p>
+<p id="label_short_prober">
+thám tử
+</p>
+<p id="icon_prober">
+<span class="prober">
+	<span class="icon"></span>
+	<span class="icon_label">Thám tử</span>
+</span>
+</p>
+
+<p id="label_tf2t">Máy copy 2.0</p>
+<p id="label_short_tf2t">
+máy copy 2.0
+</p>
+<p id="icon_tf2t">
+<span class="tf2t">
+	<span class="icon"></span>
+	<span class="icon_label">Máy copy 2.0</span>
+</span>
+</p>
+
+<p id="label_pavlov">Đầu óc tối giản</p>
+<p id="label_short_pavlov">
+đầu óc tối giản
+</p>
+<p id="icon_pavlov">
+<span class="pavlov">
+	<span class="icon"></span>
+	<span class="icon_label">Đầu óc tối giản</span>
+</span>
+</p>
+
+<p id="label_random">Ngẫu hứng</p>
+<p id="label_short_random">
+ngẫu hứng
+</p>
+<p id="icon_random">
+<span class="random">
+	<span class="icon"></span>
+	<span class="icon_label">Ngẫu hứng</span>
+</span>
+</p>
+
+<p id="forgot_whos_who">
+(quên mất ai là ai rồi à? di chuột lên trên các nút để xem lại mô tả về các nhân vật!)
+</p>
+<p id="who_tft">
+Đầu tiên hợp tác. Sau đó lặp lại hành động của BẠN trong lượt trước.
+</p>
+<p id="who_all_d">
+Luôn ăn gian.
+</p>
+<p id="who_all_c">
+Luôn hợp tác.
+</p>
+<p id="who_grudge">
+Đầu tiên hợp tác, và luôn hợp tác cho tới khi bạn ăn gian 1 lần.
+Từ đó về sau thì luôn ăn gian.
+</p>
+<p id="who_prober">
+Bắt đầu: hợp tác, ăn gian, hợp tác, hợp tác.
+Sau đó, nếu bạn đã từng ăn gian, anh ta chơi như Máy copy.
+Nếu không, anh ta sẽ ăn gian liên tục.
+</p>
+<p id="who_tf2t">
+Đầu tiên hợp tác.
+Chỉ ăn gian nếu bạn ăn gian 2 lần liên tiếp.
+</p>
+<p id="who_pavlov">
+Đầu tiên hợp tác.
+Sau đó, nếu lượt trước bạn hợp tác, anh ta lặp lại hành động trước (kể cả khi đó là lỗi).
+Nếu lượt trước bạn ăn gian, anh ta làm hành động ngược với lượt trước (kể cả khi đó là lỗi).
+</p>
+<p id="who_random">
+Chọn ngẫu nhiên ăn gian hay hợp tác (50-50)
+</p>
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - SMALL LABELS! - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="label_cooperate">
+hợp tác
+</p>
+
+<p id="label_cheat">
+ăn gian
+</p>
+
+<p id="label_play">
+chơi
+</p>
+
+<p id="label_start">
+TỰ CHẠY
+</p>
+
+<p id="label_stop">
+DỪNG
+</p>
+
+<p id="label_step">
+tiếp 1 bước
+</p>
+
+<p id="label_reset">
+thiết lập lại
+</p>
+
+<p id="label_population">
+xã hội</p>
+</p>
+
+<p id="label_payoffs">
+payoffs
+</p>
+
+<p id="label_rules">
+luật
+</p>
+
+<p id="label_next">
+tiếp &rarr;
+</p>
+
+<p id="label_continue">
+tiếp
+</p>
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - NAVIGATING CHAPTERS - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="chapter_intro">
+0. Giới thiệu
+</p>
+<p id="chapter_oneoff">
+1. Chơi 1 lượt
+</p>
+<p id="chapter_iterated">
+2. Chơi nhiều lượt
+</p>
+<p id="chapter_tournament">
+3. 1 giải đấu
+</p>
+<p id="chapter_evolution">
+4. Nhiều giải đấu
+</p>
+<p id="chapter_distrust">
+5. Sự tiến hóa của hoài nghi
+</p>
+<p id="chapter_noise">
+6. Sai nầm :(
+</p>
+<p id="chapter_sandbox">
+7. Chơi tự do
+</p>
+<p id="chapter_conclusion">
+8. Kết luận
+</p>
+<p id="chapter_credits">
+9. Credits
+</p>
