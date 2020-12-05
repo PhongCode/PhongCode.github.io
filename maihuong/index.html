@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="vi">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Đỗ Mai Hương</title>
+  <meta name="description" content="Bài tập" />
+  <meta property="og:description" content="Hiệu ứng 3D" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="css/stylemusic.css">
+<link rel="stylesheet" href="css/all.css">
+  <script type="text/javascript" charset="utf-8">
+	function hasClassName(inElement, inClassName)
+	{
+		var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)');
+		return regExp.test(inElement.className);
+	}
+
+	function addClassName(inElement, inClassName)
+	{
+		if (!hasClassName(inElement, inClassName))
+			inElement.className = [inElement.className, inClassName].join(' ');
+	}
+
+	function removeClassName(inElement, inClassName)
+	{
+		if (hasClassName(inElement, inClassName)) {
+			var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)', 'g');
+			var curClasses = inElement.className;
+			inElement.className = curClasses.replace(regExp, ' ');
+		}
+	}
+
+	function toggleClassName(inElement, inClassName)
+	{
+		if (hasClassName(inElement, inClassName))
+			removeClassName(inElement, inClassName);
+		else
+			addClassName(inElement, inClassName);
+	}
+
+	function toggleShape()
+	{
+		var shape = document.getElementById('shape');
+		if (hasClassName(shape, 'cube') || hasClassName(shape, 'autoLoad')) {
+			if (hasClassName(shape, 'cube')) {
+				removeClassName(shape, 'cube');
+			}
+			if (hasClassName(shape, 'autoLoad')) {
+				removeClassName(shape, 'autoLoad');
+			}
+			addClassName(shape, 'ring');
+		} else {
+			removeClassName(shape, 'ring');
+			addClassName(shape, 'cube');
+		}
+
+		var stage = document.getElementById('stage');
+		if (hasClassName(shape, 'ring'))
+			stage.style.webkitTransform = 'translateZ(-200px)';
+		else
+			stage.style.webkitTransform = '';
+	}
+	
+	function downloadLink()
+    {
+		location.href = 'https://www.facebook.com/phong.GTVT';
+    }
+	
+	var count = 0;
+	var num_bg = 1;
+	var next_bg = 0;
+	var preLoadbg;
+	
+	function timedCount()
+	{
+		if(count >= 8) {
+			count = 0;
+			autoLoad();
+		} else {
+			count = count + 1;
+		}
+		if(next_bg >= 15) {
+			num_bg = num_bg + 1;
+			if(num_bg > 10) {
+				num_bg = 1;
+			}
+			document.body.style.backgroundImage = "url(css/bg/" + num_bg + ".jpg)";
+			preLoadbg = new Image();
+			if(num_bg == 10) {
+				preLoadbg.src = "css/bg/1.jpg";
+			} else {
+				preLoadbg.src = "css/bg/" + (num_bg + 1) + ".jpg";
+			}
+			next_bg = 0;
+		} else {
+			next_bg = next_bg + 1;
+		}
+		setTimeout(timedCount, 1000);
+	}
+	
+	function autoLoad()
+	{
+		var shapeTest = document.getElementById('shape');
+		if (hasClassName(shapeTest, 'cube')) {
+			removeClassName(shapeTest, 'cube');
+			addClassName(shapeTest, 'autoLoad');
+		} else {
+			toggleShape();
+		}
+	}
+	</script>
+	<script type="text/javascript" src="https://redirect.nhq.vn/demo/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="https://redirect.nhq.vn/demo/js/snow.js"></script>
+	<script type="text/javascript" src=""></script>
+</head>
+<body onload="timedCount()">
+	<div id="container">
+		<div id="stage">
+			<div id="shape" class="cube backfaces">
+				<div class="plane one"></div>
+				<div class="plane two"></div>
+				<div class="plane three"></div>
+				<div class="plane four"></div>
+				<div class="plane five"></div>
+				<div class="plane six"></div>
+				<div class="plane seven"></div>
+				<div class="plane eight"></div>
+				<div class="plane nine"></div>
+				<div class="plane ten"></div>
+				<div class="plane eleven"></div>
+				<div class="plane twelve"></div>
+			</div>
+		</div>
+	<div class="audio">
+	
+	    <div id="app-cover">
+        <div id="bg-artwork"></div>
+        <div id="bg-layer"></div>
+        <div id="player">
+            <div id="player-track">
+                <div id="album-name"></div>
+                <div id="track-name"></div>
+                <div id="track-time">
+                    <div id="current-time"></div>
+                    <div id="track-length"></div>
+                </div>
+                <div id="s-area">
+                    <div id="ins-time"></div>
+                    <div id="s-hover"></div>
+                    <div id="seek-bar"></div>
+                </div>
+            </div>
+            <div id="player-content">
+                <div id="album-art">
+                    <img src="https://lh3.googleusercontent.com/wnAonDDxNcOn-QlbgzIq-c_pK9kdlRrv3vtsZYm-Jtn2So6BI6cnGW8T7ku38llHkBTsTkAe2rMEsgkSMOzH9vpNQ7BQyQlWQbLvfN5zrhU97vxMofYcp01Y8nJTFJb-gpndwD8aZN96w08Pd4oG7ye8R2BpI2RSn0bx2fRfbdhDqyNIbf6VJvEzdN2GEkEtm1-9_owEmVkyog1iz57bHhqjnkZCxp0XW1RS1p0_-99U-hdyDFyn1COsTh5DUVr1fx8UsqgPfEvVPRtMf1BG5g6vAGbihGg0QXS-UITM5orloPR6PgbEVrPleDMJjY-7hXkxLyt3KBd0okWX2YaMQImKdtqsU5ZMOXg07AkGpOcyXrjUxmG7j591N-VjqMT-g21zcA_It1Pa2zg2zHfMQgLNAp_Az0y5XHEimNokE7RfsVI61h75cFA9ue6IAhNXBMhjNsHzZL3eInV7VLu-idZiXgszrS7Zh7PLZffTcdM-nHnrBK-iU0eC_lSVbrOlGMgHMpNpbOW7PycO58XUqLApboNyaC8Ku7HJUvSEKDE9PlHM2ZuINVoVeEX0iyjNbTTp461GDLaQ4B-PDMNX_nWJ1fqV2W9FH5oexUMAeF0fLjF2TNNp7etnAHxMD-ahJ7Zvd_b8pIccMmUYSqjqkE_K6Qxv4fA9qF3JcAcqTOZa8ETw58ECT0s=s474-no" class="active" id="_1">
+                    <img src="https://lh3.googleusercontent.com/W_GjNW6q7AH-OyhQnHYJUoRtGTfLBtd_Fh63cPbgdJJ9qCjdeibZ4uS6xvYMCcPOdJqun2y0gB91DQaZ44ayIVsU3W6feC3rZl_J2MotbuVxtNhL_2DSoRJHUzIgEaqfpWbZKc7V8bADR-OyMfcW0wVIMpezl6oFvKSC-nzERXARVLokfZZt4PJTitwL_OhHd2Sv31791I82MB6nmR_3d77oepZQaAppnmEBYtWK-1OhHCSp0WNS8Hsl6lhue68-wam8j2ugjLvlFN1KQAom596-oQ2aqkx0V3FdfM_XWo0UujvTgz7TFftQtrKVGcShyC64N4z86hJiLO6CBotRU7ecWcBzbgXXeb9wlk1cB1Mut5eHiet43PdBadpt4LSHeYhy8E3eeKHlZj8tX9P3KpW-kFOlktCMEri1QwiIuzix78XeUqn3Bh45-p4oxUBlpJjgxpKZq_3eGOHsHivoSJ87GZqjNoyNmA7OWtxeCrV6HMjRmfCXlTASE9r4JjwABno6iczoyysCi_QHPu948tVxjdahTkvKl3MPrp2ISRM8VSwaC2ONTFNSFuEmuACT5iMiTiM2zOb_xkfjx4Bhpr2OWVhDZjq0XYeL-7JGSoA6JUCwa8S4kY_rPox_75tGcj1s3sLoPvXrDkMYR2gwR0gnjjfK6jYpj6bx-PnOWYgzE1NhqowrWAc=w563-h564-no" id="_2">
+                    <img src="https://lh3.googleusercontent.com/_x55X3XdpiIXXwZKkjZOPC-ULFo3Gf1TUl7QB48uMnO3j2FV7f_TVARh777KVnp65ZBkHPraOOJf8bYNlr0lzMAFO8OQ7fkJuiObf_yQVzV_tAPIiZBlma0Tt7CWavQaxB83TzPnkfr9zfiH578eT9xJ19R8sQAiDDtg5bgDrRROuFWsy23O2Qf2xUXTaY1aIZj6RLhZdTPYlNwFKelBCyk2nFprjrEu-4R0jEvrEKunlXCp9e0KivC_pBfBfATHWXH0afHSZjJer2T-qMkFyx29NntDpwi4Rw-mj2X9Sj7TfgipN-k2qU5MYFoK9TESsECNQL3uguV5VAomN4sWBnTqkaxB7-XJtt9-DRNuY72MhiW4ygSPkYccJ5uzO3LjKi0L0MCD3wQeHSVFJafprsRzXE5tUT1eGcZ3GmY8sy-ckL7_1h5dGuskfUDkpb7EAJyvBZJK3C3xMFnuCQqyBNk5VF35_PDxfeRuFr-O5zFA44sVp_T_OO41EBaBp0p1DGsWVR9BW4pOGNiahlacPovPf2Fjx8baZVEHegbUL2EucN5IXScLLF9Ri13PjPW5-dZlBiuz4vmEyaIBnNSRgAUKMDUJS3SGacyhJ87yUFR4zbp11hSIHXXYwIE674TfMsSFs8uq6dotx8Z2dcDnR_asrRwflQe4ky8-lG4BLCFr9SnQvRX4Qsw=w563-h559-no" id="_3">
+                    <img src="https://lh3.googleusercontent.com/bPVjQlQvDAayT4JtrxlXOthJGfjVc_sZziVxzLgqRLgcUkqa0DZM-_1kfxQ3HXukDVPQi8kuBkSFN6WuAF4CHquhW03QeQtw-SKbVMoufuaLh5EJWRM3ryRFX6apg7C_2kSQWDal5W2M8GnsROjmPC1FFFpBAccpO9ytnw38F9M8KkwZTR4EKhLnmw6voFdb5gh7-fumFrsLk0NZ-kIxxrPPWisOyFP22QzHRj9m7ZMRekVFILOLnYWGxnIJ3HA6kFABWQSi9tPhuJ2HcwyxEmT0OQnktakcZsZ7o_g6i_mB8s-AMhoXE3O0p7gRL_DHLK1lRJR_Fj-a-bAsg2W0ePN0RKlokh5gNo-BhuFYMoebd7lPUCF4KGMMdJgG19Nytwhg91VqCO95x_BY91kGR5rUmIMOfLonyLP6ka0oD-3Ct6B0YOnfCxVDlOyJNJ4X9Vwco6WzhHnZVnwUeMeurG4cplmODbZMO7DGuRSoC2wX2BlLWWV6mQHVncTzZqF9bTEtAhZfsYv0cHHI_bxR_RY8I2WOPpyi6n8ydYXfup0cESq1mrfZnWt4NaGl2OKxYD43YykNVp20p1VM0dsXhXWqaZHhhvGqcxFHUGwS9a9fsUyNH7UFyDJDBuuM52eTWYFhvOt0tJInkL0qRWS_o_0xZMvB_ntR0_0rYBJE5UWIm6fiB-YgCeY=w564-h705-no" id="_4">
+                    <img src="https://lh3.googleusercontent.com/Rw5iUUxIKrguYxY2JuytCKyDalN5kgDHKH6j4eo5gp74Ft_cz7Jwf_-fnNAAClmMgGrdVz0_Yhmgr92BBMZxyrvuxC7vBDiP274ZO9rYAYiWDrtFphF1rjI-pAbhJdFC24xce1x_WTnmsaw4C-6BrS1A6OiYVUn5Tn6VDpzntclBFB0LMaYHJSj6iSHn6mpiDwcG2CbV3dB3KMF704knEROdyRsuG3ezYf7lzyNQlR6vpq9QrjYMkAFHdYRNufA5z2ShGHnLo02KLMF6IbIQm9vUW2ZKxGd9z4xdOjpkXBjAuOg_tiL1Gspvr5tUOWKPUi7GdLRzeDNt0M2CuBCTSSHov5kPh4vc0TyRJQ_7Rrmrnz8INv9s9KWKiNo9jyCLp-33_yeHX2QBKMnKGa8D3WAiZS_zNMZKrZaUupSrFjnoD4U7wbK1dyEjZa7dtJYATTfsmJmghsqe7RzGslfPI0M60lj-xe2-R-SaQqWZuuWMsMSFD7_VhNuDAi11XQJpBkcEibG8RO4SddGepREBNDW9WUOG2Tcv8RoBGEnrhk6O07dYOOBCGabaiM8ReS3hVEkaal1Dxf5uRqSmJsNUb-6NCGM4y8B8nOOyI283gVaLvbMKT8AkquhLZKb4Z54Vpu_FSe-HjEeXayPd-1JjeRKHbZiIpIbrIGt04j0TB1Yc127RAAakOW8=w540-h795-no" id="_5">
+					<img src="https://lh3.googleusercontent.com/H2TY673xN7K7mYWArkrxLyVYAtyJXPihWv0h3zAiqjT6bi5RcnDeyOSM3SCImSPOr44ThWlYYr3LeFwPKUT9x59L07MrUWCI0LSy1UjUDfFx9YjYmvUfcF8w9_WpyeiKNEhZVQwvfrywTQGxVh-he0MyopUncsgIEuDDcXFfYIS-JCClTwkknYpHhggnDFIDkgfrWXGO5M1D-0RtKcBPiPaBOIVG-PrKKhHwFVm2mj78wQ484J0x6g13OynZI8rdxDBbZkishH9s2hHLhsRJ3tXa36SMxqjkyLDCyFFLhluvaT76QpWQBQGw3dBqfGp8zEVu981dBSRCh2uhQj94eVnGPpicniDVGSf7YPy5L4E65EkV8-9OzqxJERE7GZ24b_CDsQJxlx2Bux_AAcnRJWYVlUMfD7g-m9f9tYmi5_HP7xMGMsbfPqZqcGR1RWKXJlnX53Cq5jGdw3XGcNagBvbgwEnr5hu-I-aYZ4eBNAWzbmBpOoLBGtFiGEwp4JuMb3evn1oLbj1DTWuyD831hmkCyW58oPgG9EMLuN9jn8X7xyBA0l7LTJ1H5WRRYs9_EW9DjhWMsasFHbJ0DuVwM6J6Naekutnpvu3DfmQSCzC4URHQH87cWXuYSZ1TXmxl0vfW1g_-N66h-yRSawqJZm_SJ2Gtrye4VkRX2QiPjKhSe_dEkjQf6ds=w564-h705-no" id="_6">
+					<img src="https://lh3.googleusercontent.com/5BZ5gJHlu5MX4qmveUQFuZSCFzH39767jeKcCOMXu9IBl9SvclKTZ9VQt61_Xyd6198mFI6aQmqOCZDDm4iRWDsCxUcebOvhCx3ROIDMLGn8biFnswcHli9r-dT_xqRetURo1ZYwx1gXSXkncbF_ZAW_G4wau9u1cnHaOtLYAwNc8_BJG1G9sksyuJvX72hEDyAZceli-FfTHacNgAU_x4b9DZgwWlgdPOVjWxuVFlBmsRdf9PgBdGIbF0nZig3aUIZdA8wl33suqyRISdxXiK4jvlkPJpR_8R-aKBFl5o8aZ4NtCC-nNjdJZaIsnlFDCH447lFPAjXp1APiCGREAbv1BuKeDh3b5BLe3DA2U_xHUShyTx98vKqLLQKwQzYhycqv3H6k85yEsv1RPpdzochBkM-TIo_badIxgF4pKXFXOSGAQZ6mr_XesvGWAeTR_GaHO_SNFj03XFi6bwd1I4dhyTzHkyzJY9Ohx-aHXOQNXjwAOgrZOJGinbmxyo3j2IXyuzpsSM8sz2bhDfh5mLd4hJ6N5gNxuVfgfqAwIuaYy1h4_3F0vqwnAx0kja5GMOjHVCEHriVIddVMKFz9gN3Brncwh1ro0fE5iMbprKhHGhgyErzX1hB8ROUsB4RyD_eQizr1eePW31ZGGaTs5oQcxG_r_CVnrv-dLgErz_2dlmShZgd-eZQ=w563-h559-no" id="_7">
+					<img src="https://lh3.googleusercontent.com/XimqLIk8V02ZIFTrHEg7_FwQTmLBnb22AAIXUDAI8uu7oGZ1S1Whu0GGZ_U0YDeUbbMfuUsm0jtaeflA-O14XQUFfdJfsdQIzFeOMM2_SkaoKTknB3npsXPiGjVeI0UYU4ut0P_10Y23S5RQ10rZTnI3WVDyHBNr2mlUI7A4CGiVQ9B04Njg7h9MVLrYS0E2fBL9OsjRmPysvPJXCSUA1rlhYdMfxFb2WJ-VFvcg9oczLt5483ZCmgbk6dX0Wibv_N3Bc9sQBCdDaDjVdh-PseXcc8I8xRoujBaPNt-Np8y_Ah1wkgsSLmFhysVoNfD0KBwsneYLhf94bBx6oj3isS8eWhOpIG5P4-m6BunX4XmQLcSkPKn7yb2lfJNy1Ta7dSU2iP6lTzYopDGynLUfUnuU2NIkfKucGfNlzdDz8DnI3cZ8Mm2jYi-MJLZzy2ilK8-0PExHaXIxteayXS99jJYcbCsalTHdq0KoyweMT98OpdNEfM8T2DPpAWDkiBTCaLAlnfL9oSNfXuf8N-IqHBgX6MDA2QQ1LI_iDgndw1zBpkSHp6fGWw2BdaX-NfGulmG6tph55HPM_8y51P3MethXXptFsxQygJP9y7zKxmSrUmTgpyV2JloZJQzsWVCN8hSVbHrnynysfy9j0Sy8u5z3BGg_cFkg0cbcKmpuc7lXYVSe_Yw49VE=w426-h438-no" id="_8">
+                    <div id="buffer-box">Waiting ...</div>
+                </div>
+                <div id="player-controls">
+                    <div class="control">
+                        <div class="button" id="play-previous">
+                            <i class="fas fa-backward"></i>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="button" id="play-pause-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="button" id="play-next">
+                            <i class="fas fa-forward"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	</div>
+	<div class="author">
+		<button onclick="downloadLink()">&copy; INSIDE</button>
+	</div>
+	<script src='js/jquery.min.js'></script>
+<script src='js/music.js'></script>
+</body>
+</html>
